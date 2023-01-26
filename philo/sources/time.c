@@ -6,7 +6,7 @@
 /*   By: jfremond <jfremond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:42:17 by jfremond          #+#    #+#             */
-/*   Updated: 2022/01/19 16:31:24 by jfremond         ###   ########.fr       */
+/*   Updated: 2023/01/26 06:41:34 by jfremond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	init_time(t_infos *time)
 		return (free_error(time));
 	time->start_time_sec = tv.tv_sec;
 	time->start_time_usec = tv.tv_usec;
-	time->start_time = time->start_time_usec * 1000
+	time->start_time = time->start_time_sec * 1000
 		+ time->start_time_usec / 1000;
 	return (0);
 }
