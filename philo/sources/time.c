@@ -6,7 +6,7 @@
 /*   By: jfremond <jfremond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:42:17 by jfremond          #+#    #+#             */
-/*   Updated: 2023/01/26 06:41:34 by jfremond         ###   ########.fr       */
+/*   Updated: 2023/02/10 11:12:07 by jfremond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ long	get_time(t_infos *time)
 	return (current_time);
 }
 
-int	standing_action(t_infos *infos, int time_to_reach)
+int	standing_action(t_infos *infos, int time_to_reach, t_philo *philo)
 {
 	long	time;
 	long	start_time;
 
 	time = get_time(infos);
 	start_time = get_time(infos);
-	while (time < time_to_reach + start_time)
+	while (time < time_to_reach + start_time && !is_dead(philo))
 	{
 		if (usleep(200) == -1)
 			return (free_error(infos));

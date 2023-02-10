@@ -6,7 +6,7 @@
 /*   By: jfremond <jfremond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 21:51:32 by jfremond          #+#    #+#             */
-/*   Updated: 2022/01/19 18:00:56 by jfremond         ###   ########.fr       */
+/*   Updated: 2023/02/10 11:13:16 by jfremond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	one_philo_routine(t_philo *philo)
 {
 	pthread_mutex_lock(philo->right_fork);
 	print_state(philo, FORK);
-	standing_action(philo->ptr_infos, philo->ptr_infos->time_to_die);
+	standing_action(philo->ptr_infos, philo->ptr_infos->time_to_die, philo);
 	pthread_mutex_unlock(philo->right_fork);
 	printf("%ld %d died\n", get_time(philo->ptr_infos), philo->id);
 }
@@ -41,7 +41,8 @@ void	routine(t_philo *philo)
 		if (!is_dead(philo) && !has_eaten_enough(philo))
 			print_state(philo, SLEEP);
 		if (!is_dead(philo) && !has_eaten_enough(philo))
-			standing_action(philo->ptr_infos, philo->ptr_infos->time_to_sleep);
+			standing_action(philo->ptr_infos, philo->ptr_infos->time_to_sleep,
+				philo);
 		if (!is_dead(philo) && !has_eaten_enough(philo))
 			print_state(philo, THINK);
 	}

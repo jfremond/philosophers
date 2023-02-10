@@ -6,7 +6,7 @@
 /*   By: jfremond <jfremond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 18:07:30 by jfremond          #+#    #+#             */
-/*   Updated: 2022/01/19 22:14:24 by jfremond         ###   ########.fr       */
+/*   Updated: 2023/02/10 11:08:49 by jfremond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int			check_arg_validity(int argc, char **argv);
 /* Time */
 int			init_time(t_infos *time);
 long		get_time(t_infos *time);
-int			standing_action(t_infos *infos, int time_to_reach);
+int			standing_action(t_infos *infos, int time_to_reach, t_philo *philo);
 
 /* Messages */
 void		print_state(t_philo *philo, char *state);

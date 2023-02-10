@@ -6,7 +6,7 @@
 /*   By: jfremond <jfremond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 21:20:20 by jfremond          #+#    #+#             */
-/*   Updated: 2022/01/19 18:07:14 by jfremond         ###   ########.fr       */
+/*   Updated: 2023/02/10 11:12:29 by jfremond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	philo_eat(t_philo *philo)
 		increase_meal(philo);
 		printf("%ld %d is eating\n", get_time(philo->ptr_infos), philo->id);
 		pthread_mutex_unlock(&philo->ptr_infos->print_state);
-		standing_action(philo->ptr_infos, philo->ptr_infos->time_to_eat);
+		standing_action(philo->ptr_infos, philo->ptr_infos->time_to_eat, philo);
 	}
 	release_forks(philo);
 }
